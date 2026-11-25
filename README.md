@@ -15,7 +15,7 @@ Progetto strutturato in **R** che implementa, confronta e valuta algoritmi di **
 | :--- | :--- | :--- | :--- |
 | **A. Regressione** | `Boston` (`MASS`) | Prevedere il valore mediano delle abitazioni (`medv`) | Lineare, Step Functions, Polinomiale, Spline (Cubiche & Naturali), KNN, Alberi decisionali, Bagging, Gradient Boosting |
 | **B. Classificazione** | `penguins` (`modeldata`) | Classificare il sesso (`sex`) in base a specie e morfologia | Logistic Regression, LDA, QDA, Naive Bayes, KNN, Alberi con Pruning, Random Forest |
-| **C. Non Supervisionato** | `penguins` | Individuare i gruppi naturali (specie) dalle misure fisiche | Clustering Gerarchico, K-Means, Principal Component Analysis |
+| **C. Non Supervisionato** | `penguins` | Individuare i gruppi naturali (`species`) dalle misure fisiche | Clustering Gerarchico, K-Means, Principal Component Analysis |
 
 ---
 
