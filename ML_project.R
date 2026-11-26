@@ -1,5 +1,5 @@
 #*****************************************************************************
-#*  ML PROJECT - Luca-02-byte
+#  ML PROJECT - Luca-02-byte
 #*****************************************************************************
 # Merge applicato dei lab di ML:
 # *   regressione (polinomiale, KNN, alberi, bagging, boosting, spline)
@@ -48,22 +48,19 @@ Boston %>%
 cor(Boston)[,"medv"] %>%
   sort()
 
-# Istat e rm (numero medio di stanze, correlazione positiva) sono le variabili piu' legate a medv. Le visualizziamo insieme colorando i punti
-# con la risposta (stesso grafico del Lab 1)
+# Istat e rm (numero medio di stanze, correlazione positiva) sono le variabili piu' legate a medv. Le visualizziamo insieme colorando i punti con la risposta
 Boston %>%
   ggplot()+
   geom_point(aes(x=lstat,y=rm,col=medv))+
   scale_colour_gradientn(colours = rev(hcl.colors(12)))
 
-# Le zone piu' care stanno in alto a sinistra: poche persone di status basso e case con piu' stanze.
-# Relazione tra lstat e medv, con la curva loess di geom_smooth (Lab 8)
+# Le zone piu' care stanno in alto a sinistra: poche persone di status basso e case con piu' stanze.  Relazione tra lstat e medv, con la curva loess di geom_smooth 
 Boston %>%
   ggplot(aes(x=lstat, y=medv)) +
   geom_point() +
   geom_smooth()
 
-# La relazione non e' lineare: la curva scende ripida per valori bassi di lstat e poi si appiattisce. Ci aspettiamo che i modelli flessibili
-# battano la retta.
+# La relazione non e' lineare: la curva scende ripida per valori bassi di lstat e poi si appiattisce. Ci aspettiamo che i modelli più flessibili battano la retta.
 
 
 #*****************************************************************************
@@ -180,15 +177,13 @@ data.frame(K_vec, mse_knn_vec) %>%
 K_reg = K_vec[which.min(mse_knn_vec)] # tuned number of neighbours
 K_reg
 
-# Il grafico va letto da sinistra (K piccolo, modello molto flessibile) a destra (K grande, poco flessibile): il validation error ha tipicamente
-# una forma a U.
+# Il grafico va letto da sinistra (K piccolo, modello molto flessibile) a destra (K grande, poco flessibile): il validation error ha tipicamente una forma a U.
 
 #=========================== Riuniamo training e validation ===================
 # Scelti d e K non serve piu' un validation set separato: lo riuniamo al training per avere piu' dati nella stima finale.
 
 boston_trainval = rbind(boston_validation, boston_training)
 dim(boston_trainval)
-
 
 #*****************************************************************************
 #*  UNA SOLA VARIABILE: LSTAT
@@ -368,7 +363,7 @@ bag_perf
 varImpPlot(bag_fit$fit)
 importance(bag_fit$fit)
 
-#  Le variabili in cima al grafico sono quelle che, se escluse, fanno aumentare di piu' l'errore. Come cambia l'errore OOB con il numero di alberi (Lab 4):
+#  Le variabili in cima al grafico sono quelle che, se escluse, fanno aumentare di piu' l'errore. Come cambia l'errore OOB con il numero di alberi:
 set.seed(22, sample.kind="Rejection")
 ntree_vec = seq(10, 500, by=20)
 ooberrvec = c() 
@@ -514,7 +509,7 @@ data.frame(obs = boston_test$medv,
 #*****************************************************************************
 #*  PARTE B: PENGUINS, CLASSIFICAZIONE
 #*****************************************************************************
-# Obiettivo: riconoscere il SESSO (sex, binario) di un pinguino dalla specie e da quattro misure corporee. Confronto di modelli, soglie e ROC (Lab 3 e 5).
+# Obiettivo: riconoscere il SESSO (sex, binario) di un pinguino dalla specie e da quattro misure corporee. Confronto di modelli, soglie e ROC.
 
 #=============================== Dati ed esplorazione =========================
 glimpse(penguins)
@@ -894,7 +889,7 @@ clust_compcut = cutree(clust_comp, k = 3)
 table(clust_compcut)
 
 #================================== K-means ===================================
-# Numero di cluster: somma dei quadrati entro i gruppi (wss) al variare di K, cercando un gomito (Lab 6)
+# Numero di cluster: somma dei quadrati entro i gruppi (wss) al variare di K, cercando un gomito 
 fviz_nbclust(penguin_std,
              kmeans,
              method = "wss")
