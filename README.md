@@ -30,5 +30,5 @@ Progetto strutturato in **R** che implementa, confronta e valuta algoritmi di **
 ## Struttura della Repository
 
 
-├── - [`ML_project.R`](./ML_project.R) — commented code
-└── [`README.md `](./README.md ) - documentazione del progetto
+ - [`ML_project.R`](./ML_project.R) — commented code
+ - [`README.md `](./README.md ) - documentazione del progetto
