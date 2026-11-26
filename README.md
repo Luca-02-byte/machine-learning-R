@@ -1,9 +1,7 @@
 # Machine Learning in R via tidyverse and tidymodels
 
-![R](https://img.shields.io/badge/R-4.6+-276DC3?style=flat&logo=r&logoColor=white)
-![Tidymodels](https://img.shields.io/badge/Framework-Tidymodels-blue?style=flat)
 
-Progetto strutturato in **R** che implementa, confronta e valuta algoritmi di **apprendimento supervisionato e non supervisionato** su dataset reali. Il codice copre: esplorazione dei dati (EDA), split del dataset in *training/validation/test set*, tuning degli iperparametri e valutazione comparativa delle metriche.
+Progetto strutturato in **R** che implementa, confronta e valuta algoritmi di **apprendimento supervisionato e non supervisionato** su dataset direttamente fruibili in R : `Boston` (`MASS`), `penguins` (`modeldata`). Il codice copre: esplorazione dei dati (EDA), split del dataset in *training/validation/test set*, tuning degli iperparametri e valutazione comparativa delle metriche.
 
 >  Basato sui laboratori del corso *Machine Learning* ([MLFE 25-26 R Labs](https://mcameletti.quarto.pub/mlfe-25-26-rlabs/)).
 
